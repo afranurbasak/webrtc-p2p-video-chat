@@ -1,0 +1,17 @@
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.db
+*.db-shm
+*.db-wal
+wwwroot/uploads/
+.idea/
+.vscode/
+Thumbs.db
+desktop.ini
+node_modules/
+.env
+Thumbs.db
+desktop.ini

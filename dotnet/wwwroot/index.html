@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebRTC Görüşme</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="arka-plan-sekli sekil1"></div>
+  <div class="arka-plan-sekli sekil2"></div>
+
+  <div class="sayfa">
+    <header class="ust-alan">
+      <div>
+        <h1>WebRTC Görüntülü Görüşme</h1>
+        <p>Gerçek zamanlı görüntü, ses ve mesajlaşma</p>
+      </div>
+      <div class="durum-kapsul" id="durum">Durum: Hazır</div>
+    </header>
+
+    <main class="icerik">
+      <section class="sol-alan">
+        <div class="kontrol-paneli">
+          <button id="kameraBtn" class="btn btn-ana">Kamerayı Aç</button>
+          <button id="kameraKapatBtn" class="btn btn-nor">Kamerayı Kapat</button>
+          <button id="mikrofonBtn" class="btn btn-nor">Mikrofonu Kapat</button>
+          <button id="baglanBtn" class="btn btn-ana">Bağlan</button>
+          <button id="buyutBtn" class="btn btn-vurgu">Karşı Tarafı Büyüt</button>
+          <button id="bitirBtn" class="btn btn-tehlike">Aramayı Bitir</button>
+        </div>
+
+        <div class="video-grid">
+          <div class="video-kart sade-kart">
+            <video id="kendiVideo" autoplay playsinline muted></video>
+            <div class="video-kose-etiketi">Ben</div>
+          </div>
+
+          <div id="karsiKart" class="video-kart">
+            <div class="kart-ust">
+              <h3>Misafir</h3>
+              <span class="mini-badge">Canlı</span>
+            </div>
+
+            <video id="karsiVideo" autoplay playsinline></video>
+
+            <button id="kucultBtn" class="buyuk-kapat-btn" style="display:none;">
+              Küçült
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <aside class="chat-panel">
+        <div class="chat-ust">
+          <div>
+            <h2>Sohbet</h2>
+            <p>Mesajlar burada sabit görünür</p>
+          </div>
+          <span class="mini-badge">RTCDataChannel</span>
+        </div>
+
+        <div id="mesajAlani" class="mesaj-alani"></div>
+
+        <div class="mesaj-giris">
+          <textarea id="mesajKutusu" placeholder="Mesaj yaz..."></textarea>
+          <button id="gonderBtn" class="btn btn-ana tam">Gönder</button>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
